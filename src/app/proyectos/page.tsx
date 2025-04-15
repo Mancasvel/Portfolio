@@ -5,7 +5,7 @@ import ProjectTimeline from '@/components/ProjectTimeline';
 import ProjectGrid from '@/components/ProjectGrid';
 import { useState } from 'react';
 
-export default function Proyectos() {
+export default function Projects() {
   const [viewMode, setViewMode] = useState<'timeline' | 'grid'>('timeline');
 
   return (
@@ -16,10 +16,10 @@ export default function Proyectos() {
         transition={{ duration: 0.5 }}
         className="mb-12"
       >
-        <h1 className="heading-xl mb-6">Proyectos</h1>
+        <h1 className="heading-xl mb-6">Projects</h1>
         <p className="text-xl opacity-80 max-w-3xl">
-          Una selección de mis trabajos más destacados. Cada proyecto refleja mi enfoque
-          en la intersección entre la tecnología, el diseño y el impacto humano.
+          A selection of my most outstanding work. Each project reflects my approach
+          at the intersection of technology, design, and human impact.
         </p>
 
         <div className="flex items-center mt-8 space-x-4">

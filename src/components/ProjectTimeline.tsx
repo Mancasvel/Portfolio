@@ -10,10 +10,10 @@ const projects = [
     year: '2023',
     title: 'CoNest',
     description:
-      'Plataforma innovadora que conecta a personas mayores con estudiantes para crear comunidades intergeneracionales basadas en el apoyo mutuo y la solidaridad.',
+      'Innovative platform that connects elderly people with students to create intergenerational communities based on mutual support and solidarity.',
     tags: ['TypeScript', 'Next.js', 'MongoDB', 'Tailwind'],
     impact:
-      'Facilitó más de 500 conexiones intergeneracionales creando comunidades inclusivas y sostenibles.',
+      'Facilitated over 500 intergenerational connections creating inclusive and sustainable communities.',
     image: '/images/projects/conest.jpg',
     color: '#3B82F6',
     github: 'https://github.com/manuelcasdev/CoNest',
@@ -23,10 +23,10 @@ const projects = [
     year: '2022',
     title: 'Pawtel',
     description:
-      'Plataforma innovadora para la búsqueda y reserva de hoteles para mascotas. Ofrece una experiencia intuitiva para encontrar el hospedaje perfecto para las mascotas.',
+      'Innovative platform for searching and booking pet-friendly hotels. It offers an intuitive experience to find the perfect accommodation for pets.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Django'],
     impact:
-      'Incrementó las reservas en hoteles para mascotas en un 45%, mejorando la gestión y visibilidad de estos negocios.',
+      'Increased pet hotel bookings by 45%, improving management and visibility for these businesses.',
     image: '/images/projects/pawtel.jpg',
     color: '#10B981',
     github: 'https://github.com/LuisMelladoDiaz/Pawtel-ComparadorDeHotelesParaMascotas',
@@ -36,10 +36,10 @@ const projects = [
     year: '2022',
     title: 'MongoDB Cursor Analysis',
     description:
-      'Aplicación web para analizar y comparar diferentes operaciones de cursor de MongoDB y sus implicaciones de rendimiento. Construida con Django y PyMongo.',
+      'Web application to analyze and compare different MongoDB cursor operations and their performance implications. Built with Django and PyMongo.',
     tags: ['Python', 'Django', 'MongoDB', 'PyMongo', 'Jupyter'],
     impact:
-      'Optimización de consultas MongoDB en sistemas de alta carga, logrando mejoras de rendimiento superiores al 30%.',
+      'Optimization of MongoDB queries in high-load systems, achieving performance improvements of over 30%.',
     image: '/images/projects/mongodb.jpg',
     color: '#4F46E5',
     github: 'https://github.com/manuelcasdev/mongodb-cursor-analysis',
@@ -49,10 +49,10 @@ const projects = [
     year: '2021',
     title: 'Fuzzy C-Shell',
     description:
-      'Implementación del algoritmo de clustering Fuzzy C-Shell, junto con un generador de datos de prueba para crear conjuntos de datos sintéticos.',
+      'Implementation of the Fuzzy C-Shell clustering algorithm, along with a test data generator to create synthetic datasets.',
     tags: ['Python', 'Machine Learning', 'Data Science', 'Clustering'],
     impact:
-      'Aportación a la comunidad científica con una herramienta de clustering innovadora para análisis de datos complejos.',
+      'Contribution to the scientific community with an innovative clustering tool for complex data analysis.',
     image: '/images/projects/fuzzy.jpg',
     color: '#EC4899',
     github: 'https://github.com/manuelcasdev/fuzzy-c-shell',
@@ -62,10 +62,10 @@ const projects = [
     year: '2020',
     title: 'All The Way Up',
     description:
-      'Proyecto de game jam para Scopely. Un juego innovador desarrollado con Unity y C#.',
+      'Game jam project for Scopely. An innovative game developed with Unity and C#.',
     tags: ['C#', 'Unity', 'Game Development', 'Scopely'],
     impact:
-      'Reconocimiento en la game jam de Scopely por la creatividad e innovación en mecánicas de juego.',
+      'Recognition in the Scopely game jam for creativity and innovation in game mechanics.',
     image: '/images/projects/game.jpg',
     color: '#F59E0B',
     github: 'https://github.com/manuelcasdev/all-the-way-up',
@@ -143,7 +143,7 @@ export default function ProjectTimeline() {
 
                   <div className="mb-5 bg-black/30 p-4 rounded-xl backdrop-blur-sm">
                     <h4 className="text-sm font-semibold uppercase tracking-wider text-accent mb-2">
-                      Impacto
+                      Impact
                     </h4>
                     <p className="text-gray-300 text-sm">{project.impact}</p>
                   </div>
@@ -182,7 +182,7 @@ export default function ProjectTimeline() {
                       <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" className="mr-2">
                         <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
                       </svg>
-                      Ver en GitHub
+                      View on GitHub
                       <motion.div 
                         className="inline-block ml-1"
                         initial={{ x: 0 }}

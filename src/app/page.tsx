@@ -11,7 +11,7 @@ import AboutSection from '@/components/AboutSection';
 import ContactCTA from '@/components/ContactCTA';
 
 export default function Home() {
-  // Para controlar las animaciones al hacer scroll
+  // For controlling animations when scrolling
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

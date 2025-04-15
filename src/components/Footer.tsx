@@ -11,15 +11,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
             <Link href="/" className="text-2xl font-bold tracking-tight mb-6 block">
-              <span className="text-accent">CTO</span>Portfolio
+              <span className="text-accent">MCV</span>Portfolio
             </Link>
             <p className="opacity-80 mb-6">
-              Desarrollando soluciones tecnológicas con propósito, un código a la vez.
-              Balanceando funcionalidad, estética y valor humano.
+              Developing technological solutions with purpose
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://linkedin.com/in/tuusuario"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent transition-colors duration-300"
@@ -35,7 +34,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://github.com/tuusuario"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent transition-colors duration-300"
@@ -51,7 +50,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="mailto:tu@email.com"
+                href="#"
                 className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent transition-colors duration-300"
               >
                 <svg
@@ -73,43 +72,40 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6">Enlaces</h3>
+            <h3 className="text-lg font-semibold mb-6">Links</h3>
             <ul className="space-y-3">
               <li>
                 <Link href="/" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
-                  Inicio
+                  Home
                 </Link>
               </li>
               <li>
                 <Link href="/proyectos" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
-                  Proyectos
+                  Projects
                 </Link>
               </li>
               <li>
                 <Link href="/contacto" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
-                  Contacto
+                  Contact
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6">Áreas de expertise</h3>
+            <h3 className="text-lg font-semibold mb-6">Areas of Expertise</h3>
             <ul className="space-y-3">
-              <li className="opacity-80">Desarrollo Fullstack</li>
-              <li className="opacity-80">Arquitectura de Software</li>
-              <li className="opacity-80">Integración de IA</li>
-              <li className="opacity-80">UI/UX Moderno</li>
+              <li className="opacity-80">Fullstack Development</li>
+              <li className="opacity-80">Software Architecture</li>
+              <li className="opacity-80">AI Integration</li>
+              <li className="opacity-80">Modern UI/UX</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="opacity-60 text-sm">
-            &copy; {currentYear} Portfolio CTO. Todos los derechos reservados.
-          </p>
-          <p className="opacity-60 text-sm mt-4 md:mt-0">
-            Diseñado y desarrollado con ❤️ y código limpio
+            &copy; {currentYear} MCV Portfolio. All rights reserved (I guess).
           </p>
         </div>
       </div>

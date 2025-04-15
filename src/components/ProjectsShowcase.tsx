@@ -3,33 +3,73 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
-// Datos de proyectos destacados
+// Featured projects data
 const featuredProjects = [
   {
     id: 'conest',
     title: 'CoNest',
-    description: 'Plataforma para conectar estudiantes con personas mayores para compartir alojamiento, con enfoque social e intergeneracional.',
-    image: '/images/projects/conest.jpg', // Placeholder, reemplazar con imagen real
+    description: 'Platform connecting students with elderly people to share accommodation, with a social and intergenerational approach.',
+    image: '/images/projects/conest.jpg',
     tags: ['Next.js', 'MongoDB', 'Stripe', 'Tailwind'],
     color: '#3B82F6',
+    url: 'https://github.com/Mancasvel/CoNest'
   },
   {
     id: 'pawtel',
     title: 'Pawtel',
-    description: 'Plataforma de reservas para hoteles caninos, con sistema de pagos, comisiones y dashboards para hoteleros.',
-    image: '/images/projects/pawtel.jpg', // Placeholder, reemplazar con imagen real
+    description: 'Booking platform for pet hotels, with payment system, commissions and dashboards for hoteliers.',
+    image: '/images/projects/pawtel.jpg',
     tags: ['Vue.js', 'Node.js', 'PostgreSQL', 'AWS'],
     color: '#10B981',
+    url: 'https://github.com/LuisMelladoDiaz/Pawtel-ComparadorDeHotelesParaMascotas'
   },
   {
     id: 'cutelligence',
     title: 'Cutelligence',
-    description: 'IA especializada para barberías, con integraciones inteligentes y asistente conversacional.',
-    image: '/images/projects/cutelligence.jpg', // Placeholder, reemplazar con imagen real
+    description: 'AI specialized for barbershops, with smart integrations and conversational assistant.',
+    image: '/images/projects/cutelligence.jpg',
     tags: ['React', 'TensorFlow.js', 'OpenAI', 'Firebase'],
     color: '#8B5CF6',
+    url: '#'
   },
+  {
+    id: 'all-the-way-up',
+    title: 'All The Way Up',
+    description: 'Award-winning game developed during the Scopely Game Jam, demonstrating rapid prototyping and teamwork.',
+    image: '/images/projects/all-the-way-up.jpg',
+    tags: ['C#', 'Unity', 'ShaderLab', 'GameDev'],
+    color: '#4F46E5',
+    url: 'https://github.com/Mancasvel/all-the-way-up'
+  },
+  {
+    id: 'car-model-detection',
+    title: 'Car Model Detection',
+    description: 'Deep learning model using PyTorch and YOLOv8 to classify car models from images with high accuracy.',
+    image: '/images/projects/car-detection.jpg',
+    tags: ['Python', 'PyTorch', 'YOLOv8', 'Deep Learning', 'AI'],
+    color: '#D97706',
+    url: 'https://github.com/davidgonmar/pid-car-model-classification'
+  },
+  {
+    id: 'mongodb-analysis',
+    title: 'MongoDB Analysis',
+    description: 'Analysis project focused on MongoDB, exploring database performance and optimization techniques.',
+    image: '',
+    tags: ['MongoDB', 'Python', 'Data Analysis', 'Optimization'],
+    color: '#13AA52',
+    url: 'https://github.com/Mancasvel/Mongodb_Analysis_Project'
+  },
+  {
+    id: 'fuzzy-c-shell',
+    title: 'Fuzzy C-Shell',
+    description: 'A custom C-shell implementation featuring fuzzy command matching and enhanced shell functionalities.',
+    image: '',
+    tags: ['C', 'Shell', 'Systems Programming', 'Fuzzy Logic'],
+    color: '#FF6F61',
+    url: 'https://github.com/Mancasvel/Fuzzy_C-Shell_Project'
+  }
 ];
 
 export default function ProjectsShowcase() {
@@ -46,11 +86,11 @@ export default function ProjectsShowcase() {
           className="text-center mb-16"
         >
           <h2 className="heading-lg mb-5">
-            Proyectos <span className="text-accent">destacados</span>
+            Featured <span className="text-accent">Projects</span>
           </h2>
           <p className="text-xl opacity-80 max-w-3xl mx-auto">
-            Soluciones innovadoras que combinan tecnología, diseño y propósito. 
-            Cada proyecto representa un desafío único resuelto con creatividad.
+            Innovative solutions that combine technology, design and purpose. 
+            Each project represents a unique challenge solved with creativity.
           </p>
         </motion.div>
 
@@ -85,21 +125,23 @@ export default function ProjectsShowcase() {
             >
               <div>
                 <div
-                  className="relative h-[300px] md:h-[400px] rounded-xl overflow-hidden"
+                  className="relative h-[300px] md:h-[400px] rounded-xl overflow-hidden border border-gray-700 flex items-center justify-center"
                   style={{ background: `linear-gradient(45deg, ${project.color}33, ${project.color}66)` }}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <h3 className="text-3xl font-bold">{project.title}</h3>
-                  </div>
-                  {/* Cuando tengas imágenes, descomenta esto:
-                  <Image 
-                    src={project.image} 
-                    alt={project.title} 
-                    fill
-                    style={{ objectFit: 'cover' }} 
-                    className="rounded-xl"
-                  />
-                  */}
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      className="rounded-xl"
+                    />
+                  ) : (
+                    <div className="text-center p-4">
+                      <h4 className="text-2xl font-semibold text-white opacity-80">{project.title}</h4>
+                      <p className="text-sm text-white opacity-60">Image coming soon</p>
+                    </div>
+                  )}
                 </div>
               </div>
               
@@ -119,16 +161,23 @@ export default function ProjectsShowcase() {
                 </div>
                 
                 <div className="flex space-x-4">
-                  {/* Enlaces a detalles de proyectos y/o demos */}
-                  <Link
-                    href={`/proyectos#${project.id}`}
-                    className="btn-primary"
-                  >
-                    Ver detalles
-                  </Link>
-                  <button className="py-2 px-6 rounded-md font-semibold border border-white/20 hover:border-white/40 transition-colors duration-300">
-                    Ver demo
-                  </button>
+                  {project.url ? (
+                    <Link
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary"
+                    >
+                      View Project / Repo
+                    </Link>
+                  ) : (
+                    <Link
+                      href={`/proyectos`}
+                      className="btn-primary"
+                    >
+                      View Details
+                    </Link>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -140,7 +189,7 @@ export default function ProjectsShowcase() {
             href="/proyectos"
             className="inline-flex items-center text-accent hover:text-blue-400 transition-colors font-medium"
           >
-            Ver todos los proyectos
+            View all projects
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 ml-1"

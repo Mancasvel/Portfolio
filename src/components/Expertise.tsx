@@ -30,9 +30,9 @@ function ExpertiseCard({ title, description, icon, delay }: ExpertiseCardProps) 
 export default function Expertise() {
   const expertiseAreas = [
     {
-      title: 'Desarrollo Fullstack',
+      title: 'Fullstack Development',
       description:
-        'Dominio en tecnologías modernas como Next.js, Node.js, MongoDB, Vue.js y más, para crear soluciones web completas y potentes.',
+        'Mastery of modern technologies like Next.js, Node.js, MongoDB, Vue.js, and more, to create complete and powerful web solutions.',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -40,9 +40,9 @@ export default function Expertise() {
       ),
     },
     {
-      title: 'Arquitectura Moderna',
+      title: 'Modern Architecture',
       description:
-        'Diseño de sistemas escalables, sostenibles y resilientes. Implementación de patrones arquitectónicos que optimizan el rendimiento y la mantenibilidad.',
+        'Design of scalable, sustainable, and resilient systems. Implementation of architectural patterns that optimize performance and maintainability.',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -50,9 +50,9 @@ export default function Expertise() {
       ),
     },
     {
-      title: 'Integración de IA',
+      title: 'AI Integration',
       description:
-        'Desarrollo de soluciones con IA, chatbots avanzados y flujos inteligentes. Automatización de procesos empresariales complejos con n8n.',
+        'Development of AI solutions, advanced chatbots, and intelligent workflows. Automation of complex business processes with n8n.',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -60,9 +60,9 @@ export default function Expertise() {
       ),
     },
     {
-      title: 'UI/UX Moderno',
+      title: 'Modern UI/UX',
       description:
-        'Creación de interfaces elegantes con enfoque en la experiencia emocional del usuario. Diseño de interacciones que deleitan y generan conexión.',
+        'Creation of elegant interfaces focusing on the user\'s emotional experience. Design of interactions that delight and create connection.',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
@@ -81,10 +81,10 @@ export default function Expertise() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="heading-lg mb-5">Áreas de <span className="text-accent">expertise</span></h2>
+          <h2 className="heading-lg mb-5">Areas of <span className="text-accent">expertise</span></h2>
           <p className="text-xl opacity-80 max-w-3xl mx-auto">
-            Un enfoque multidisciplinario que combina habilidades técnicas y visión
-            estratégica para desarrollar productos digitales excepcionales.
+            A multidisciplinary approach combining technical skills and strategic vision
+            to develop exceptional digital products.
           </p>
         </motion.div>
 

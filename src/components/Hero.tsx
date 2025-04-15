@@ -274,10 +274,10 @@ export default function Hero() {
             
             <h1 className="heading-xl mb-6 relative overflow-hidden">
               <span className="relative z-8">
-                CTO & Artesano del código con enfoque{' '}
+                CTO & Software Designer with a{' '}
               </span>
               <span className="relative z-10 text-accent font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-300">
-                creativo
+                Vision
               </span>
               
               {/* Línea brillante que se desliza */}
@@ -297,44 +297,13 @@ export default function Hero() {
             transition={{ delay: 0.3, duration: 0.7 }}
             className="text-xl md:text-2xl mb-10 opacity-80 leading-relaxed"
           >
-            Creo soluciones tecnológicas con propósito, balanceando{' '}
-            <span className="text-accent font-semibold">funcionalidad</span>,{' '}
-            <span className="text-accent font-semibold">estética</span> y{' '}
-            <span className="text-accent font-semibold">valor humano</span>.{' '}
-            <span className="italic">El software como arte funcional.</span>
+            I craft purposeful technology solutions, balancing{' '}
+            <span className="text-accent font-semibold">functionality</span>,{' '}
+            <span className="text-accent font-semibold">aesthetics</span> and{' '}
+            <span className="text-accent font-semibold">human value</span>.{' '}
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.7 }}
-            className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center"
-          >
-            <Link 
-              href="/proyectos" 
-              className="btn-primary relative overflow-hidden group bg-black border border-accent/50 hover:border-accent"
-            >
-              <span className="relative z-10">Ver proyectos</span>
-              <motion.div 
-                className="absolute inset-0 bg-accent"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </Link>
-            <Link
-              href="/contacto"
-              className="relative group py-2 px-6 rounded-md font-semibold border border-accent/40 hover:border-accent text-accent transition-colors duration-300 overflow-hidden"
-            >
-              <span className="relative z-10 group-hover:text-white transition-colors duration-300">Contactar</span>
-              <motion.div 
-                className="absolute inset-0 bg-accent/0 group-hover:bg-accent/100 -z-10"
-                initial={{ y: "100%" }}
-                whileHover={{ y: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </Link>
-          </motion.div>
+          
         </motion.div>
 
         <motion.div

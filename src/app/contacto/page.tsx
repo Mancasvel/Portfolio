@@ -6,12 +6,12 @@ import { useForm } from 'react-hook-form';
 import Link from 'next/link';
 
 type FormData = {
-  nombre: string;
+  name: string;
   email: string;
-  mensaje: string;
+  message: string;
 };
 
-export default function Contacto() {
+export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
@@ -28,23 +28,23 @@ export default function Contacto() {
     setSubmitError('');
     
     try {
-      // En un entorno real, aquí se enviaría el formulario a un endpoint
-      // Por ejemplo, usando Resend:
+      // In a real environment, here you would send the form to an endpoint
+      // For example, using Resend:
       // const { data, error } = await resend.emails.send({
-      //   from: 'Formulario Portfolio <onboarding@resend.dev>',
-      //   to: 'tu-email@ejemplo.com',
-      //   subject: `Contacto de ${data.nombre}`,
-      //   text: `Mensaje de ${data.nombre} (${data.email}): ${data.mensaje}`,
+      //   from: 'Portfolio Form <onboarding@resend.dev>',
+      //   to: 'your-email@example.com',
+      //   subject: `Contact from ${data.name}`,
+      //   text: `Message from ${data.name} (${data.email}): ${data.message}`,
       // });
       
-      // Simulamos un envío exitoso
+      // Simulating a successful submission
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       setSubmitSuccess(true);
       reset();
     } catch (error) {
-      setSubmitError('Ha ocurrido un error al enviar el mensaje. Por favor, inténtalo de nuevo.');
-      console.error('Error al enviar el formulario:', error);
+      setSubmitError('An error occurred while sending the message. Please try again.');
+      console.error('Error sending the form:', error);
     } finally {
       setIsSubmitting(false);
     }
@@ -59,10 +59,10 @@ export default function Contacto() {
         className="grid grid-cols-1 md:grid-cols-2 gap-12"
       >
         <div>
-          <h1 className="heading-xl mb-6">Contacto</h1>
+          <h1 className="heading-xl mb-6">Contact</h1>
           <p className="text-xl opacity-80 mb-8">
-            ¿Tienes un proyecto en mente o quieres que colaboremos? 
-            Escríbeme y conversemos sobre cómo podemos trabajar juntos.
+            Do you have a project in mind or want us to collaborate? 
+            Write to me and let's talk about how we can work together.
           </p>
           
           <div className="space-y-4 mt-12">
@@ -74,7 +74,7 @@ export default function Contacto() {
               </div>
               <div>
                 <h3 className="text-lg font-medium">Email</h3>
-                <p className="text-accent">email@ejemplo.com</p>
+                <p className="text-accent">mancasvel@icloud.com</p>
               </div>
             </div>
             
@@ -86,11 +86,12 @@ export default function Contacto() {
               </div>
               <div>
                 <h3 className="text-lg font-medium">LinkedIn</h3>
-                <Link href="https://linkedin.com/in/tuusuario" target="_blank" className="text-accent hover:underline">
-                  linkedin.com/in/tuusuario
+                <Link href="https://www.linkedin.com/in/manuel-castillejo-vela-7200112a4/" target="_blank" className="text-accent hover:underline">
+                  LinkedIn Profile
                 </Link>
               </div>
             </div>
+          
           </div>
         </div>
         
@@ -104,33 +105,33 @@ export default function Contacto() {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-green-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              <h3 className="text-2xl font-bold mb-2">¡Mensaje enviado!</h3>
-              <p className="text-gray-300 mb-6">Gracias por contactarme. Te responderé lo antes posible.</p>
+              <h3 className="text-2xl font-bold mb-2">Message sent!</h3>
+              <p className="text-gray-300 mb-6">Thank you for contacting me. I will respond as soon as possible.</p>
               <button
                 onClick={() => setSubmitSuccess(false)}
                 className="btn-primary"
               >
-                Enviar otro mensaje
+                Send another message
               </button>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              <h2 className="text-2xl font-bold mb-6">Envíame un mensaje</h2>
+              <h2 className="text-2xl font-bold mb-6">Send me a message</h2>
               
               <div>
-                <label htmlFor="nombre" className="block text-sm font-medium mb-2">
-                  Nombre
+                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  Name
                 </label>
                 <input
-                  id="nombre"
+                  id="name"
                   type="text"
-                  {...register('nombre', { required: 'El nombre es obligatorio' })}
+                  {...register('name', { required: 'Name is required' })}
                   className={`w-full p-3 bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-accent ${
-                    errors.nombre ? 'border border-red-500' : ''
+                    errors.name ? 'border border-red-500' : ''
                   }`}
                 />
-                {errors.nombre && (
-                  <p className="text-red-500 text-sm mt-1">{errors.nombre.message}</p>
+                {errors.name && (
+                  <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
                 )}
               </div>
               
@@ -142,10 +143,10 @@ export default function Contacto() {
                   id="email"
                   type="email"
                   {...register('email', { 
-                    required: 'El email es obligatorio',
+                    required: 'Email is required',
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: 'Email inválido'
+                      message: 'Invalid email'
                     }
                   })}
                   className={`w-full p-3 bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-accent ${
@@ -158,19 +159,19 @@ export default function Contacto() {
               </div>
               
               <div>
-                <label htmlFor="mensaje" className="block text-sm font-medium mb-2">
-                  Mensaje
+                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  Message
                 </label>
                 <textarea
-                  id="mensaje"
+                  id="message"
                   rows={5}
-                  {...register('mensaje', { required: 'El mensaje es obligatorio' })}
+                  {...register('message', { required: 'Message is required' })}
                   className={`w-full p-3 bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-accent ${
-                    errors.mensaje ? 'border border-red-500' : ''
+                    errors.message ? 'border border-red-500' : ''
                   }`}
                 />
-                {errors.mensaje && (
-                  <p className="text-red-500 text-sm mt-1">{errors.mensaje.message}</p>
+                {errors.message && (
+                  <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
                 )}
               </div>
               
@@ -191,10 +192,10 @@ export default function Contacto() {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Enviando...
+                    Sending...
                   </>
                 ) : (
-                  'Enviar mensaje'
+                  'Send message'
                 )}
               </button>
             </form>

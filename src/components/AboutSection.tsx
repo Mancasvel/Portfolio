@@ -15,20 +15,20 @@ export default function AboutSection() {
             transition={{ duration: 0.7 }}
           >
             <div className="relative h-[500px] rounded-lg overflow-hidden">
-              {/* Aquí puedes agregar tu imagen personal */}
+              {/* Here you can add your personal image */}
               <div className="absolute inset-0 bg-accent bg-opacity-20 flex items-center justify-center">
                 <div className="text-6xl font-bold">CTO</div>
               </div>
               
-              {/* Cuando tengas una imagen, descomenta esto:
+              
               <Image
-                src="/images/profile.jpg"
-                alt="Perfil profesional"
+                src="/images/ksty_web_cropped.jpg"
+                alt="Professional profile"
                 fill
                 style={{ objectFit: 'cover' }}
                 className="rounded-lg"
               />
-              */}
+              
             </div>
           </motion.div>
 
@@ -41,7 +41,7 @@ export default function AboutSection() {
               className="mb-6"
             >
               <h2 className="heading-lg mb-6">
-                La tecnología como <span className="text-accent">arte funcional</span>
+                Technology as <span className="text-accent">functional art</span>
               </h2>
             </motion.div>
 
@@ -52,35 +52,34 @@ export default function AboutSection() {
               transition={{ delay: 0.2, duration: 0.5 }}
             >
               <p className="text-lg mb-6 opacity-80">
-                Como CTO con experiencia liderando equipos y proyectos tecnológicos, 
-                tengo una visión del desarrollo que va más allá de la simple implementación.
-                Cada línea de código que escribo es un balance entre belleza y estructura.
+                As a CTO with experience leading teams and technological projects, 
+                I have a vision of development that goes beyond simple implementation.
               </p>
 
               <p className="text-lg mb-8 opacity-80">
-                Mi filosofía es que la programación no es solo un acto técnico, sino también
-                un acto creativo con un profundo impacto humano. Trabajar con atención al detalle,
-                mantener un alto estándar de calidad y obsesionarme con el diseño son mis pilares.
+                My philosophy is that programming is not just a technical act, but also
+                a creative act with a profound human impact. Working with attention to detail,
+                maintaining a high standard of quality, and being obsessed with design are my pillars.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                 <div className="bg-gray-800 p-6 rounded-lg">
-                  <div className="text-accent text-3xl font-bold mb-2">7+</div>
+                  <div className="text-accent text-3xl font-bold mb-2">5+</div>
                   <div className="text-sm uppercase tracking-wide opacity-70">
-                    Años de experiencia
+                    Years of experience
                   </div>
                 </div>
                 
                 <div className="bg-gray-800 p-6 rounded-lg">
-                  <div className="text-accent text-3xl font-bold mb-2">40+</div>
+                  <div className="text-accent text-3xl font-bold mb-2">20+</div>
                   <div className="text-sm uppercase tracking-wide opacity-70">
-                    Proyectos completados
+                    Completed projects
                   </div>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-3">
-                {['Liderazgo', 'Arquitectura', 'Fullstack', 'UI/UX', 'IA', 'Automatización'].map(
+                {['Leadership', 'Architecture', 'Fullstack', 'UI/UX', 'AI', 'Automation'].map(
                   (skill) => (
                     <span
                       key={skill}
