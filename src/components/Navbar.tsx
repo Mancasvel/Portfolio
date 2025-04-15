@@ -36,7 +36,7 @@ export default function Navbar() {
       <div className="container-custom">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold tracking-tight">
-            <span className="text-accent">CTO</span>Portfolio
+            <span className="text-accent">MCV</span>Portfolio
           </Link>
 
           {/* Desktop navigation */}

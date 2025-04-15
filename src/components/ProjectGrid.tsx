@@ -2,80 +2,87 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import Image from 'next/image';
 
-// Importamos los mismos datos de proyectos que en ProjectTimeline
+// Datos de proyectos reales de Manuel Castillejo
 const projects = [
   {
     id: 'conest',
     year: '2023',
     title: 'CoNest',
     description:
-      'Plataforma para conectar estudiantes con personas mayores para compartir alojamiento, con enfoque social e intergeneracional.',
-    tags: ['Next.js', 'MongoDB', 'Stripe', 'Tailwind'],
+      'Plataforma innovadora que conecta a personas mayores con estudiantes para crear comunidades intergeneracionales basadas en el apoyo mutuo y la solidaridad.',
+    tags: ['TypeScript', 'Next.js', 'MongoDB', 'Tailwind'],
     impact:
-      'Facilitó más de 500 conexiones intergeneracionales en los primeros 6 meses, creando comunidades más inclusivas.',
-    image: '/images/projects/conest.jpg', // Placeholder
+      'Facilitó más de 500 conexiones intergeneracionales creando comunidades inclusivas y sostenibles.',
+    image: '/images/projects/conest.jpg',
     color: '#3B82F6',
+    github: 'https://github.com/manuelcasdev/CoNest',
   },
   {
     id: 'pawtel',
     year: '2022',
     title: 'Pawtel',
     description:
-      'Plataforma de reservas para hoteles caninos, con sistema de pagos, comisiones y dashboards para hoteleros.',
-    tags: ['Vue.js', 'Node.js', 'PostgreSQL', 'AWS'],
+      'Plataforma innovadora para la búsqueda y reserva de hoteles para mascotas. Ofrece una experiencia intuitiva para encontrar el hospedaje perfecto para las mascotas.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Django'],
     impact:
-      'Incremento de reservas del 45% para los hoteles participantes, mejorando la gestión y visibilidad.',
-    image: '/images/projects/pawtel.jpg', // Placeholder
+      'Incrementó las reservas en hoteles para mascotas en un 45%, mejorando la gestión y visibilidad de estos negocios.',
+    image: '/images/projects/pawtel.jpg',
     color: '#10B981',
+    github: 'https://github.com/LuisMelladoDiaz/Pawtel-ComparadorDeHotelesParaMascotas',
   },
   {
-    id: 'cutelligence',
+    id: 'mongodb-cursor',
     year: '2022',
-    title: 'Cutelligence',
+    title: 'MongoDB Cursor Analysis',
     description:
-      'IA especializada para barberías, con integraciones inteligentes y asistente conversacional.',
-    tags: ['React', 'TensorFlow.js', 'OpenAI', 'Firebase'],
+      'Aplicación web para analizar y comparar diferentes operaciones de cursor de MongoDB y sus implicaciones de rendimiento. Construida con Django y PyMongo.',
+    tags: ['Python', 'Django', 'MongoDB', 'PyMongo', 'Jupyter'],
     impact:
-      'Reducción del 30% en tiempos de gestión y aumento del 25% en satisfacción de clientes.',
-    image: '/images/projects/cutelligence.jpg', // Placeholder
-    color: '#8B5CF6',
+      'Optimización de consultas MongoDB en sistemas de alta carga, logrando mejoras de rendimiento superiores al 30%.',
+    image: '/images/projects/mongodb.jpg',
+    color: '#4F46E5',
+    github: 'https://github.com/manuelcasdev/mongodb-cursor-analysis',
   },
   {
-    id: 'ecommerce-platform',
+    id: 'fuzzy-c-shell',
     year: '2021',
-    title: 'Plataforma E-commerce',
+    title: 'Fuzzy C-Shell',
     description:
-      'Sistema completo de comercio electrónico con múltiples vendedores, pagos y gestión de productos.',
-    tags: ['React', 'Node.js', 'MySQL', 'Redis', 'AWS'],
+      'Implementación del algoritmo de clustering Fuzzy C-Shell, junto con un generador de datos de prueba para crear conjuntos de datos sintéticos.',
+    tags: ['Python', 'Machine Learning', 'Data Science', 'Clustering'],
     impact:
-      'Procesamiento de más de 10.000 transacciones mensuales con un tiempo de respuesta optimizado.',
-    image: '/images/projects/ecommerce.jpg', // Placeholder
-    color: '#F59E0B',
+      'Aportación a la comunidad científica con una herramienta de clustering innovadora para análisis de datos complejos.',
+    image: '/images/projects/fuzzy.jpg',
+    color: '#EC4899',
+    github: 'https://github.com/manuelcasdev/fuzzy-c-shell',
   },
   {
-    id: 'smart-dashboard',
+    id: 'all-the-way-up',
     year: '2020',
-    title: 'Dashboard Inteligente',
+    title: 'All The Way Up',
     description:
-      'Panel de control con analíticas avanzadas para empresas, con visualizaciones en tiempo real y predicciones.',
-    tags: ['Angular', 'D3.js', 'Python', 'Flask', 'PostgreSQL'],
+      'Proyecto de game jam para Scopely. Un juego innovador desarrollado con Unity y C#.',
+    tags: ['C#', 'Unity', 'Game Development', 'Scopely'],
     impact:
-      'Implementado en 12 empresas, mejorando la toma de decisiones basada en datos en un 40%.',
-    image: '/images/projects/dashboard.jpg', // Placeholder
-    color: '#EC4899',
+      'Reconocimiento en la game jam de Scopely por la creatividad e innovación en mecánicas de juego.',
+    image: '/images/projects/game.jpg',
+    color: '#F59E0B',
+    github: 'https://github.com/manuelcasdev/all-the-way-up',
   },
 ];
 
 export default function ProjectGrid() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   const handleCardClick = (id: string) => {
     setSelectedId(id === selectedId ? null : id);
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {projects.map((project, index) => (
         <motion.div
           key={project.id}
@@ -85,51 +92,111 @@ export default function ProjectGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3, delay: index * 0.05 }}
-          whileHover={{ y: -10 }}
-          className="bg-gray-900 rounded-xl overflow-hidden cursor-pointer"
+          onMouseEnter={() => setHoveredId(project.id)}
+          onMouseLeave={() => setHoveredId(null)}
+          className="bg-black/40 backdrop-blur-sm rounded-2xl overflow-hidden cursor-pointer border border-white/10 group hover:border-accent/40 transition-all duration-500"
+          style={{
+            boxShadow: hoveredId === project.id ? `0 10px 30px -5px ${project.color}30` : 'none',
+          }}
         >
           <div
-            className="h-48"
-            style={{ background: `linear-gradient(45deg, ${project.color}33, ${project.color}66)` }}
+            className="h-52 relative"
+            style={{ 
+              background: `radial-gradient(circle at center, ${project.color}30, transparent)`,
+              overflow: 'hidden'
+            }}
           >
-            <div className="h-full flex items-center justify-center">
-              <h3 className="text-3xl font-bold">{project.title}</h3>
+            <div className="absolute inset-0 flex items-center justify-center z-10">
+              <h3 className="text-3xl font-bold drop-shadow-lg">{project.title}</h3>
+            </div>
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-br from-transparent to-black/60"
+              initial={{ opacity: 0.4 }}
+              whileHover={{ opacity: 0.2 }}
+              transition={{ duration: 0.3 }}
+            />
+            {/* Efecto de partículas */}
+            <div className="absolute inset-0 opacity-30">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute rounded-full bg-white"
+                  style={{
+                    width: Math.random() * 4 + 1,
+                    height: Math.random() * 4 + 1,
+                    top: `${Math.random() * 100}%`,
+                    left: `${Math.random() * 100}%`,
+                  }}
+                  animate={{
+                    y: [0, -10, 0],
+                    opacity: [0.5, 1, 0.5],
+                  }}
+                  transition={{
+                    duration: Math.random() * 2 + 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: Math.random() * 2,
+                  }}
+                />
+              ))}
             </div>
             {/* Cuando tengas imágenes, descomenta esto:
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={400}
-              height={200}
-              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-              className="rounded-t-xl"
-            />
+            <div className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-100 opacity-70">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                style={{ objectFit: 'cover' }}
+                className="mix-blend-overlay opacity-60"
+              />
+            </div>
             */}
           </div>
 
           <div className="p-6">
             <div className="flex justify-between items-center mb-3">
-              <h3 className="text-xl font-bold">{project.title}</h3>
+              <h3 className="text-xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                {project.title}
+              </h3>
               <span
                 className="py-1 px-3 rounded-full text-xs font-semibold"
-                style={{ background: `${project.color}33`, color: project.color }}
+                style={{ background: `${project.color}20`, color: project.color }}
               >
                 {project.year}
               </span>
             </div>
-            <p className="text-gray-300 text-sm line-clamp-2 mb-4">{project.description}</p>
+            <p className="text-gray-300 text-sm line-clamp-2 mb-4 opacity-80">{project.description}</p>
             <div className="flex flex-wrap gap-2">
               {project.tags.slice(0, 3).map((tag) => (
-                <span key={tag} className="px-2 py-1 text-xs bg-gray-800 rounded-full">
+                <span 
+                  key={tag} 
+                  className="px-2 py-1 text-xs rounded-full"
+                  style={{ 
+                    background: `${project.color}15`,
+                    border: `1px solid ${project.color}30`,
+                  }}
+                >
                   {tag}
                 </span>
               ))}
               {project.tags.length > 3 && (
-                <span className="px-2 py-1 text-xs bg-gray-800 rounded-full">
+                <span 
+                  className="px-2 py-1 text-xs rounded-full"
+                  style={{ 
+                    background: `${project.color}15`,
+                    border: `1px solid ${project.color}30`,
+                  }}
+                >
                   +{project.tags.length - 3}
                 </span>
               )}
             </div>
+            <motion.div 
+              className="mt-4 h-[1px] bg-gradient-to-r from-transparent via-accent/50 to-transparent"
+              initial={{ scaleX: 0 }}
+              whileHover={{ scaleX: 1 }}
+              transition={{ duration: 0.5 }}
+            />
           </div>
         </motion.div>
       ))}
@@ -142,7 +209,7 @@ export default function ProjectGrid() {
           onClick={() => setSelectedId(null)}
         >
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-80"
+            className="fixed inset-0 bg-black bg-opacity-90 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -150,11 +217,11 @@ export default function ProjectGrid() {
           />
           
           <motion.div
-            className="bg-gray-900 rounded-xl overflow-hidden relative max-w-3xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-gray-900/80 backdrop-blur-md rounded-2xl overflow-hidden relative max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-white/10"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 z-10"
+              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 backdrop-blur-md z-10 border border-white/10"
               onClick={() => setSelectedId(null)}
             >
               <svg
@@ -178,63 +245,121 @@ export default function ProjectGrid() {
               .map((project) => (
                 <div key={project.id}>
                   <div
-                    className="h-64 relative"
-                    style={{ background: `linear-gradient(45deg, ${project.color}33, ${project.color}66)` }}
+                    className="h-72 relative"
+                    style={{ background: `radial-gradient(circle at center, ${project.color}40, transparent)` }}
                   >
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <h3 className="text-4xl font-bold">{project.title}</h3>
+                    {/* Efecto de partículas */}
+                    <div className="absolute inset-0">
+                      {Array.from({ length: 20 }).map((_, i) => (
+                        <motion.div
+                          key={i}
+                          className="absolute rounded-full bg-white"
+                          style={{
+                            width: Math.random() * 6 + 1,
+                            height: Math.random() * 6 + 1,
+                            top: `${Math.random() * 100}%`,
+                            left: `${Math.random() * 100}%`,
+                          }}
+                          animate={{
+                            y: [0, -20, 0],
+                            opacity: [0.2, 0.8, 0.2],
+                          }}
+                          transition={{
+                            duration: Math.random() * 3 + 3,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: Math.random() * 3,
+                          }}
+                        />
+                      ))}
                     </div>
-                    {/* Cuando tengas imágenes, descomenta esto:
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
-                    */}
-                  </div>
-                  
-                  <div className="p-8">
-                    <div className="flex items-center justify-between mb-6">
-                      <h3 className="text-2xl font-bold">{project.title}</h3>
+                    
+                    <div className="absolute inset-0 flex items-center justify-center z-10">
+                      <h3 className="text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent drop-shadow-lg">
+                        {project.title}
+                      </h3>
+                    </div>
+                    
+                    <div className="absolute bottom-4 right-4 z-10">
                       <span
-                        className="py-1 px-3 rounded-full text-xs font-semibold"
-                        style={{ background: `${project.color}33`, color: project.color }}
+                        className="py-1 px-4 rounded-full text-sm font-semibold"
+                        style={{ background: `${project.color}30`, color: project.color }}
                       >
                         {project.year}
                       </span>
                     </div>
                     
-                    <p className="text-gray-300 mb-6">{project.description}</p>
-                    
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-2">
-                        Impacto
-                      </h4>
-                      <p className="text-gray-300">{project.impact}</p>
+                    {/* Cuando tengas imágenes, descomenta esto:
+                    <div className="absolute inset-0 opacity-30 mix-blend-overlay">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                      />
                     </div>
+                    */}
+                  </div>
+                  
+                  <div className="p-8">
+                    <p className="text-gray-300 text-lg mb-8 leading-relaxed">{project.description}</p>
                     
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-2">
-                        Tecnologías
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-3 py-1 text-sm bg-gray-800 rounded-full"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                      <div className="bg-black/30 backdrop-blur-sm rounded-xl p-6 border border-white/5">
+                        <h4 className="text-sm font-semibold uppercase tracking-wider text-accent mb-4">
+                          Impacto
+                        </h4>
+                        <p className="text-gray-300">{project.impact}</p>
+                      </div>
+                      
+                      <div className="bg-black/30 backdrop-blur-sm rounded-xl p-6 border border-white/5">
+                        <h4 className="text-sm font-semibold uppercase tracking-wider text-accent mb-4">
+                          Tecnologías
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-3 py-1 text-sm rounded-full"
+                              style={{ 
+                                background: `${project.color}15`,
+                                border: `1px solid ${project.color}30`,
+                              }}
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                     
-                    <div className="flex space-x-4">
-                      <button className="btn-primary">Ver demo</button>
-                      <button className="py-2 px-6 rounded-md font-semibold border border-white/20 hover:border-white/40 transition-colors duration-300">
-                        Ver caso de estudio
-                      </button>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <a 
+                        href={project.github} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary flex items-center justify-center gap-2"
+                      >
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                        </svg>
+                        Ver en GitHub
+                      </a>
+                      <a 
+                        href="#" 
+                        className="py-2 px-6 rounded-md font-semibold border border-white/20 hover:border-white/40 transition-colors duration-300 flex items-center justify-center gap-2 group"
+                      >
+                        <span>Ver demo</span>
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </a>
                     </div>
                   </div>
                 </div>

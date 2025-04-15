@@ -20,6 +20,9 @@ module.exports = {
         'fade-in': 'fadeIn 0.5s ease-in-out forwards',
         'slide-up': 'slideUp 0.7s ease-in-out forwards',
         'slide-right': 'slideRight 0.7s ease-in-out forwards',
+        'ping-slow': 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-glow': 'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         fadeIn: {
@@ -34,6 +37,27 @@ module.exports = {
           '0%': { transform: 'translateX(-50px)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        pulseGlow: {
+          '0%, 100%': { 
+            opacity: '0.8',
+            boxShadow: '0 0 15px 2px rgba(59, 130, 246, 0.2)'
+          },
+          '50%': { 
+            opacity: '0.4',
+            boxShadow: '0 0 25px 5px rgba(59, 130, 246, 0.5)'
+          },
+        },
+      },
+      transitionProperty: {
+        'height': 'height',
+        'spacing': 'margin, padding',
+      },
+      backdropBlur: {
+        xs: '2px',
       },
     },
   },
