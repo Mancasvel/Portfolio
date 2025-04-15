@@ -50,6 +50,14 @@ export default function Navbar() {
               </Link>
             ))}
 
+            {/* CTA Button */}
+            <Link
+              href="/contacto"
+              className="text-sm font-medium bg-accent text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-colors shadow-md"
+            >
+              Let's work together
+            </Link>
+
             {/* Social Links */}
             <div className="flex items-center space-x-4">
               <a 
@@ -129,6 +137,15 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+
+            {/* CTA Button Mobile */}
+            <Link
+              href="/#contact"
+              className="block py-2 text-base font-medium text-accent hover:text-blue-400 transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Let's work together
+            </Link>
 
             {/* Social Links Mobile */}
             <div className="flex items-center space-x-4 py-2">
