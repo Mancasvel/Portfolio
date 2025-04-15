@@ -22,7 +22,7 @@ const featuredProjects: Project[] = [
     id: 'conest',
     title: 'CoNest',
     description: 'Platform connecting students with elderly people to share accommodation, with a social and intergenerational approach.',
-    image: '/images/projects/conest.jpg',
+    image: '',
     tags: ['Next.js', 'MongoDB', 'Stripe', 'Tailwind'],
     color: '#3B82F6',
     url: 'https://github.com/Mancasvel/CoNest'
@@ -31,7 +31,7 @@ const featuredProjects: Project[] = [
     id: 'pawtel',
     title: 'Pawtel',
     description: 'Booking platform for pet hotels, with payment system, commissions and dashboards for hoteliers.',
-    image: '/images/projects/pawtel.jpg',
+    image: '/images/pawtel.png',
     tags: ['Vue.js', 'Node.js', 'PostgreSQL', 'AWS'],
     color: '#10B981',
     url: 'https://github.com/LuisMelladoDiaz/Pawtel-ComparadorDeHotelesParaMascotas'
@@ -40,7 +40,7 @@ const featuredProjects: Project[] = [
     id: 'cutelligence',
     title: 'Cutelligence',
     description: 'AI specialized for barbershops, with smart integrations and conversational assistant.',
-    image: '/images/projects/cutelligence.jpg',
+    image: '',
     tags: ['React', 'TensorFlow.js', 'OpenAI', 'Firebase'],
     color: '#8B5CF6',
     url: '#'
@@ -49,7 +49,7 @@ const featuredProjects: Project[] = [
     id: 'all-the-way-up',
     title: 'All The Way Up',
     description: 'Award-winning game developed during the Scopely Game Jam, demonstrating rapid prototyping and teamwork.',
-    image: '/images/projects/all-the-way-up.jpg',
+    image: '/images/all_the_way_up.png',
     tags: ['C#', 'Unity', 'ShaderLab', 'GameDev'],
     color: '#4F46E5',
     url: 'https://github.com/Mancasvel/all-the-way-up'
@@ -58,7 +58,7 @@ const featuredProjects: Project[] = [
     id: 'car-model-detection',
     title: 'Car Model Detection',
     description: 'Deep learning model using PyTorch and YOLOv8 to classify car models from images with high accuracy.',
-    image: '/images/projects/car-detection.jpg',
+    image: '',
     tags: ['Python', 'PyTorch', 'YOLOv8', 'Deep Learning', 'AI'],
     color: '#D97706',
     url: 'https://github.com/davidgonmar/pid-car-model-classification'
@@ -165,8 +165,7 @@ export default function ProjectsShowcase() {
               ) : (
                 <div className="flex items-center justify-center h-full">
                   <div className="text-center p-4">
-                    <h4 className="text-xl font-semibold text-white opacity-80">{activeProject.title}</h4>
-                    <p className="text-sm text-white opacity-60">Image coming soon</p>
+                    <h4 className="text-4xl font-bold text-white">{activeProject.title}</h4>
                   </div>
                 </div>
               )}
@@ -279,9 +278,9 @@ export default function ProjectsShowcase() {
                   />
                 ) : (
                   <div className="flex items-center justify-center h-full">
-                    <div className="text-center p-4">
-                      <h4 className="text-2xl font-semibold text-white opacity-80">{selectedProject.title}</h4>
-                      <p className="text-sm text-white opacity-60">Image coming soon</p>
+                    <div className="text-center p-6">
+                      <h4 className="text-5xl font-bold text-white">{selectedProject.title}</h4>
+                      <p className="text-sm text-white opacity-60 mt-3">Image not available</p>
                     </div>
                   </div>
                 )}
