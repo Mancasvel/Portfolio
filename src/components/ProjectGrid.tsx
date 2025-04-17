@@ -8,24 +8,24 @@ import Image from 'next/image';
 const projects = [
   {
     id: 'conest',
-    year: '2023',
+    year: '2025',
     title: 'CoNest',
     description:
       'Innovative platform that connects elderly people with students to create intergenerational communities based on mutual support and solidarity.',
-    tags: ['TypeScript', 'Next.js', 'MongoDB', 'Tailwind'],
+    tags: ['TypeScript', 'Next.js', 'Supabase', 'Tailwind'],
     impact:
       'Facilitated over 500 intergenerational connections creating inclusive and sustainable communities.',
     image: '/images/projects/conest.jpg',
     color: '#3B82F6',
-    github: 'https://github.com/manuelcasdev/CoNest',
+    github: 'https://github.com/mancasvel/CoNest',
   },
   {
     id: 'pawtel',
-    year: '2022',
+    year: '2024',
     title: 'Pawtel',
     description:
       'Innovative platform for searching and booking pet-friendly hotels. It offers an intuitive experience to find the perfect accommodation for pets.',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Django'],
+    tags: ['Typescript', 'Tan Stack Queries', 'Vue.js', 'Django', 'Tailwind'],
     impact:
       'Increased pet hotel bookings by 45%, improving management and visibility for these businesses.',
     image: '/images/projects/pawtel.jpg',
@@ -34,7 +34,7 @@ const projects = [
   },
   {
     id: 'mongodb-cursor',
-    year: '2022',
+    year: '2024',
     title: 'MongoDB Cursor Analysis',
     description:
       'Web application to analyze and compare different MongoDB cursor operations and their performance implications. Built with Django and PyMongo.',
@@ -43,11 +43,11 @@ const projects = [
       'Optimization of MongoDB queries in high-load systems, achieving performance improvements of over 30%.',
     image: '/images/projects/mongodb.jpg',
     color: '#4F46E5',
-    github: 'https://github.com/manuelcasdev/mongodb-cursor-analysis',
+    github: 'https://github.com/Mancasvel/Mongodb-cursor-analysis',
   },
   {
     id: 'fuzzy-c-shell',
-    year: '2021',
+    year: '2023',
     title: 'Fuzzy C-Shell',
     description:
       'Implementation of the Fuzzy C-Shell clustering algorithm, along with a test data generator to create synthetic datasets.',
@@ -56,20 +56,20 @@ const projects = [
       'Contribution to the scientific community with an innovative clustering tool for complex data analysis.',
     image: '/images/projects/fuzzy.jpg',
     color: '#EC4899',
-    github: 'https://github.com/manuelcasdev/fuzzy-c-shell',
+    github: 'https://github.com/Mancasvel/fuzzy-c-shell',
   },
   {
     id: 'all-the-way-up',
-    year: '2020',
+    year: '2023',
     title: 'All The Way Up',
     description:
-      'Game jam project for Scopely. An innovative game developed with Unity and C#.',
-    tags: ['C#', 'Unity', 'Game Development', 'Scopely'],
+      'Game jam project for Scopely. An innovative game developed with Unity and Blender.',
+    tags: ['Blender', 'Unity', 'Game Development'],
     impact:
       'Recognition in the Scopely game jam for creativity and innovation in game mechanics.',
     image: '/images/projects/game.jpg',
     color: '#F59E0B',
-    github: 'https://github.com/manuelcasdev/all-the-way-up',
+    github: 'https://github.com/Mancasvel/all-the-way-up',
   },
 ];
 

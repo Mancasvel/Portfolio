@@ -21,65 +21,47 @@ const featuredProjects: Project[] = [
   {
     id: 'conest',
     title: 'CoNest',
-    description: 'Platform connecting students with elderly people to share accommodation, with a social and intergenerational approach.',
+    description: 'Innovative platform that connects elderly people with students to create intergenerational communities based on mutual support and solidarity.',
     image: '',
-    tags: ['Next.js', 'MongoDB', 'Stripe', 'Tailwind'],
+    tags: ['TypeScript', 'Next.js', 'Supabase', 'Tailwind'],
     color: '#3B82F6',
-    url: 'https://github.com/Mancasvel/CoNest'
+    url: 'https://github.com/mancasvel/CoNest'
   },
   {
     id: 'pawtel',
     title: 'Pawtel',
-    description: 'Booking platform for pet hotels, with payment system, commissions and dashboards for hoteliers.',
+    description: 'Innovative platform for searching and booking pet-friendly hotels. It offers an intuitive experience to find the perfect accommodation for pets.',
     image: '/images/pawtel.png',
-    tags: ['Vue.js', 'Node.js', 'PostgreSQL', 'AWS'],
+    tags: ['Typescript', 'Tan Stack Queries', 'Vue.js', 'Django', 'Tailwind'],
     color: '#10B981',
     url: 'https://github.com/LuisMelladoDiaz/Pawtel-ComparadorDeHotelesParaMascotas'
   },
   {
-    id: 'cutelligence',
-    title: 'Cutelligence',
-    description: 'AI specialized for barbershops, with smart integrations and conversational assistant.',
-    image: '',
-    tags: ['React', 'TensorFlow.js', 'OpenAI', 'Firebase'],
-    color: '#8B5CF6',
-    url: '#'
-  },
-  {
-    id: 'all-the-way-up',
-    title: 'All The Way Up',
-    description: 'Award-winning game developed during the Scopely Game Jam, demonstrating rapid prototyping and teamwork.',
-    image: '/images/all_the_way_up.png',
-    tags: ['C#', 'Unity', 'ShaderLab', 'GameDev'],
+    id: 'mongodb-cursor',
+    title: 'MongoDB Cursor Analysis',
+    description: 'Web application to analyze and compare different MongoDB cursor operations and their performance implications. Built with Django and PyMongo.',
+    image: '/images/mongodb.png',
+    tags: ['Python', 'Django', 'MongoDB', 'PyMongo', 'Jupyter'],
     color: '#4F46E5',
-    url: 'https://github.com/Mancasvel/all-the-way-up'
-  },
-  {
-    id: 'car-model-detection',
-    title: 'Car Model Detection',
-    description: 'Deep learning model using PyTorch and YOLOv8 to classify car models from images with high accuracy.',
-    image: '',
-    tags: ['Python', 'PyTorch', 'YOLOv8', 'Deep Learning', 'AI'],
-    color: '#D97706',
-    url: 'https://github.com/davidgonmar/pid-car-model-classification'
-  },
-  {
-    id: 'mongodb-analysis',
-    title: 'MongoDB Analysis',
-    description: 'Analysis project focused on MongoDB, exploring database performance and optimization techniques.',
-    image: '',
-    tags: ['MongoDB', 'Python', 'Data Analysis', 'Optimization'],
-    color: '#13AA52',
-    url: 'https://github.com/Mancasvel/Mongodb_Analysis_Project'
+    url: 'https://github.com/Mancasvel/Mongodb-cursor-analysis'
   },
   {
     id: 'fuzzy-c-shell',
     title: 'Fuzzy C-Shell',
-    description: 'A custom C-shell implementation featuring fuzzy command matching and enhanced shell functionalities.',
-    image: '',
-    tags: ['C', 'Shell', 'Systems Programming', 'Fuzzy Logic'],
-    color: '#FF6F61',
-    url: 'https://github.com/Mancasvel/Fuzzy_C-Shell_Project'
+    description: 'Implementation of the Fuzzy C-Shell clustering algorithm, along with a test data generator to create synthetic datasets.',
+    image: '/images/fuzzy.png',
+    tags: ['Python', 'Machine Learning', 'Data Science', 'Clustering'],
+    color: '#EC4899',
+    url: 'https://github.com/Mancasvel/fuzzy-c-shell'
+  },
+  {
+    id: 'all-the-way-up',
+    title: 'All The Way Up',
+    description: 'Game jam project for Scopely. An innovative game developed with Unity and Blender.',
+    image: '/images/all_the_way_up.png',
+    tags: ['Blender', 'Unity', 'Game Development'],
+    color: '#F59E0B',
+    url: 'https://github.com/Mancasvel/all-the-way-up'
   }
 ];
 
@@ -119,12 +101,12 @@ export default function ProjectsShowcase() {
         </motion.div>
 
         {/* Project Selector Buttons */}
-        <div className="flex justify-center flex-wrap gap-3 mb-10">
+        <div className="flex justify-center flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-10 px-2">
           {featuredProjects.map((project, index) => (
             <button
               key={project.id}
               onClick={() => setActiveProjectIndex(index)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${ activeProjectIndex === index
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${ activeProjectIndex === index
                   ? 'bg-accent text-white shadow-md shadow-accent/40 scale-105'
                   : 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white'
               }`}
@@ -192,13 +174,13 @@ export default function ProjectsShowcase() {
               ))}
             </div>
 
-            <div className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0">
               {activeProject.url && activeProject.url !== '#' ? (
                 <Link
                   href={activeProject.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-secondary"
+                  className="btn-secondary w-full sm:w-auto text-center"
                   aria-label={`View project or repository for ${activeProject.title}`}
                 >
                   View Project / Repo
@@ -206,7 +188,7 @@ export default function ProjectsShowcase() {
               ) : (
                 <button
                   onClick={() => handleOpenModal(activeProject)}
-                  className="btn-secondary"
+                  className="btn-secondary w-full sm:w-auto"
                   aria-label={`View details for ${activeProject.title}`}
                 >
                   View Details
@@ -214,7 +196,7 @@ export default function ProjectsShowcase() {
               )}
               <button
                 onClick={() => handleOpenModal(activeProject)}
-                className="btn-primary"
+                className="btn-primary w-full sm:w-auto"
                 aria-label={`View details for ${activeProject.title}`}
               >
                  More Details

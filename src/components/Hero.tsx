@@ -185,8 +185,8 @@ export default function Hero() {
 
   // Arrays para generar palabras con efecto de typing
   const techWords = [
-    'Next.js', 'React', 'Node.js', 'MongoDB', 'TypeScript', 
-    'UI/UX', 'Django', 'Python', 'C#', 'Unity'
+    'Next.js', 'React', 'Node.js', 'MongoDB', 'MySQL', 
+    'UI/UX', 'Agile Methodologies', 'Design Thinking', 'Project Management', 'Scrum'
   ];
 
   return (
@@ -264,7 +264,7 @@ export default function Hero() {
             className="relative"
           >
             <motion.div
-              className="flex items-center justify-center text-5xl font-mono text-accent opacity-70 mb-10"
+              className="flex items-center justify-center text-3xl sm:text-4xl md:text-5xl font-mono text-accent opacity-70 mb-6 sm:mb-8 md:mb-10 px-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.5 }}
@@ -272,7 +272,7 @@ export default function Hero() {
               &lt; Manuel_Castillejo /&gt;
             </motion.div>
             
-            <h1 className="heading-xl mb-6 relative overflow-hidden">
+            <h1 className="heading-xl mb-6 relative overflow-hidden px-4 sm:px-6">
               <span className="relative z-8">
                 CTO & Software Designer with a{' '}
               </span>
@@ -295,27 +295,25 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.7 }}
-            className="text-xl md:text-2xl mb-10 opacity-80 leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-10 opacity-80 leading-relaxed px-4 sm:px-6"
           >
             I craft purposeful technology solutions, balancing{' '}
             <span className="text-accent font-semibold">functionality</span>,{' '}
             <span className="text-accent font-semibold">aesthetics</span> and{' '}
             <span className="text-accent font-semibold">human value</span>.{' '}
           </motion.p>
-
-          
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
-          className="mt-20 relative"
+          className="mt-12 sm:mt-16 md:mt-20 relative px-4 sm:px-6"
         >
           {/* Contenedor con efecto de glassmorphism */}
-          <div className="backdrop-blur-md bg-black/30 rounded-xl p-4 border border-white/10">
+          <div className="backdrop-blur-md bg-black/30 rounded-xl p-3 sm:p-4 border border-white/10">
             {/* Palabras clave con tecnologías */}
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3">
               {techWords.map((tech, index) => (
                 <motion.div
                   key={tech}
@@ -335,7 +333,7 @@ export default function Hero() {
                     borderColor: "rgba(59, 130, 246, 0.8)",
                     background: "linear-gradient(135deg, rgba(10, 30, 80, 0.8), rgba(20, 30, 70, 0.9))"
                   }}
-                  className="py-2 px-4 bg-gradient-to-br from-black/80 to-black/40 rounded-md text-sm md:text-base backdrop-blur-sm text-center border border-white/5 hover:border-accent/40 transition-all duration-300 relative group cursor-pointer"
+                  className="py-1.5 sm:py-2 px-2 sm:px-4 bg-gradient-to-br from-black/80 to-black/40 rounded-md text-xs sm:text-sm md:text-base backdrop-blur-sm text-center border border-white/5 hover:border-accent/40 transition-all duration-300 relative group cursor-pointer"
                 >
                   {tech}
                   <motion.div
@@ -354,7 +352,7 @@ export default function Hero() {
           </div>
           
           {/* Líneas conectoras decorativas */}
-          <div className="absolute inset-0 -z-10 opacity-20">
+          <div className="absolute inset-0 -z-10 opacity-20 hidden sm:block">
             <div className="absolute h-16 w-px bg-accent left-1/4 -top-16" />
             <div className="absolute h-16 w-px bg-accent right-1/4 -top-16" />
             <div className="absolute h-px w-1/2 bg-accent top-0 left-1/4" />

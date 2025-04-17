@@ -6,6 +6,7 @@
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
+  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
 }
 
 * {
@@ -19,6 +20,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  font-size: var(--font-size-base);
 }
 
 body {
@@ -53,22 +55,30 @@ a {
   }
 
   .btn-primary {
-    @apply bg-accent text-white py-2 px-6 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300;
+    @apply bg-accent text-white py-2 px-4 sm:px-6 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300 text-center;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-800 text-white py-2 px-4 sm:px-6 rounded-md font-semibold hover:bg-gray-700 transition-colors duration-300 text-center;
   }
 
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-12 md:py-16 lg:py-24;
   }
 
   .heading-xl {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight;
   }
 
   .heading-lg {
-    @apply text-3xl md:text-4xl font-bold leading-tight tracking-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold leading-tight tracking-tight;
   }
 
   .heading-md {
-    @apply text-2xl md:text-3xl font-bold leading-tight;
+    @apply text-xl sm:text-2xl md:text-3xl font-bold leading-tight;
+  }
+
+  .text-responsive {
+    @apply text-base sm:text-lg md:text-xl;
   }
 } 

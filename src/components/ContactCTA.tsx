@@ -5,14 +5,14 @@ import Link from 'next/link';
 
 export default function ContactCTA() {
   return (
-    <section className="py-20 bg-primary relative overflow-hidden">
+    <section id="contact" className="py-16 sm:py-20 bg-primary relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-accent opacity-20 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-accent opacity-20 blur-3xl" />
+        <div className="absolute -top-24 -right-24 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-accent opacity-20 blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-accent opacity-20 blur-3xl" />
       </div>
 
-      <div className="container-custom relative z-10">
+      <div className="container-custom relative z-10 px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -20,23 +20,23 @@ export default function ContactCTA() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto text-center"
         >
-          <h2 className="heading-lg mb-6">
+          <h2 className="heading-lg mb-4 sm:mb-6">
             Ready to create something <span className="text-accent">extraordinary</span>?
           </h2>
-          <p className="text-xl opacity-80 mb-10">
+          <p className="text-base sm:text-lg md:text-xl opacity-80 mb-8 sm:mb-10">
             Let's talk about how I can help you transform your ideas into
             impactful and purposeful technology solutions.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link href="/contacto" className="btn-primary">
+            <Link href="/contacto" className="btn-primary w-full sm:w-auto">
               Contact Me
             </Link>
             <Link
               href="https://www.linkedin.com/in/manuel-castillejo-vela-7200112a4/"
               target="_blank"
               rel="noopener noreferrer"
-              className="py-2 px-6 rounded-md font-semibold border border-accent text-accent hover:bg-accent hover:bg-opacity-10 transition-colors duration-300 flex items-center justify-center"
+              className="py-2 px-6 rounded-md font-semibold border border-accent text-accent hover:bg-accent hover:bg-opacity-10 transition-colors duration-300 flex items-center justify-center w-full sm:w-auto"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
