@@ -186,7 +186,7 @@ export default function Hero() {
   // Arrays para generar palabras con efecto de typing
   const techWords = [
     'Next.js', 'React', 'Node.js', 'MongoDB', 'MySQL', 
-    'UI/UX', 'Agile Methodologies', 'Design Thinking', 'Project Management', 'Scrum'
+    'UI/UX', 'Agile', 'Design', 'Project Mgmt', 'Scrum'
   ];
 
   return (
@@ -333,9 +333,9 @@ export default function Hero() {
                     borderColor: "rgba(59, 130, 246, 0.8)",
                     background: "linear-gradient(135deg, rgba(10, 30, 80, 0.8), rgba(20, 30, 70, 0.9))"
                   }}
-                  className="py-1.5 sm:py-2 px-2 sm:px-4 bg-gradient-to-br from-black/80 to-black/40 rounded-md text-xs sm:text-sm md:text-base backdrop-blur-sm text-center border border-white/5 hover:border-accent/40 transition-all duration-300 relative group cursor-pointer"
+                  className="py-1.5 sm:py-2 px-2 sm:px-4 bg-gradient-to-br from-black/80 to-black/40 rounded-md text-xs sm:text-sm md:text-base backdrop-blur-sm text-center border border-white/5 hover:border-accent/40 transition-all duration-300 relative group cursor-pointer truncate overflow-hidden"
                 >
-                  {tech}
+                  <span className="block truncate">{tech}</span>
                   <motion.div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100"
                     initial={{ opacity: 0 }}
@@ -365,10 +365,10 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.5 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
+        className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 z-20"
       >
         <div className="flex flex-col items-center">
-          <span className="text-sm mb-2 opacity-60 font-mono">
+          <span className="text-xs sm:text-sm mb-1 sm:mb-2 opacity-60 font-mono">
             <motion.span
               animate={{ opacity: [0.2, 1, 0.2] }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -376,10 +376,10 @@ export default function Hero() {
               scroll_down
             </motion.span>
           </span>
-          <div className="w-5 h-10 border border-white/20 rounded-full flex justify-center group hover:border-accent/50 transition-colors duration-300">
+          <div className="w-4 h-8 sm:w-5 sm:h-10 border border-white/20 rounded-full flex justify-center group hover:border-accent/50 transition-colors duration-300">
             <motion.div
               animate={{
-                y: [2, 14, 2],
+                y: [2, 10, 2],
               }}
               transition={{
                 duration: 1.5,
